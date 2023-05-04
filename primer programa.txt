@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // Application name
+      debugShowCheckedModeBanner: false,
+      title: 'primer app',
+      // Application theme data, you can set the colors for the application as
+      // you want
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+      ),
+      // A widget which will be started on application startup
+      home: MyHomePage(title: 'Primera App Rea'),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  final String title;
+  const MyHomePage({super.key, required this.title});
+
+  get style => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        // The title text which will be shown on the action bar
+        title: Text(title),
+      ),
+      body: Column(children: [
+        const Text(
+          "Laguna del quilotoa ",
+          style: TextStyle(
+            fontSize: 30,
+          ),
+        ),
+        Image.network(
+            'https://th.bing.com/th/id/R.9480eb8e94881e57b764ebb2d88d56db?rik=4VjjuEQq3oXykw&riu=http%3a%2f%2fecuadormitierra.com%2fwp-content%2fuploads%2f2018%2f11%2flaguna-del-Quilotoa.jpg&ehk=M4mlIQOC%2fEq%2f1IdT8kKBFKNAbQH63Vx82wtGYwK2PU0%3d&risl=&pid=ImgRaw&r=0'),
+        const Text(
+          "-",
+          style: TextStyle(
+            fontSize: 15,
+          ),
+        ),
+        const Text(
+          "La preciosa Laguna de Quilotoa se encuentra a 178 km al suroeste de Quito, en la provincia de Cotopaxi. Alucinarás con su altura, está ubicada nada más y nada menos que a 3.914 metros sobre el nivel del mar. Es por eso que recomendamos estar uno o dos días en Quito para aclimatarte antes de hacer la excursión",
+          style: TextStyle(
+            fontSize: 15,
+          ),
+        ),
+        const Text(
+          "-",
+          style: TextStyle(
+            fontSize: 15,
+          ),
+        ),
+      ]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("hola David");
+        },
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+
+  column({required List<Image> child, required List<Widget> children}) {}
+}
